@@ -318,28 +318,110 @@ body {
     }
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .product-list {
-      flex-direction: column;
+  /* General Mobile Styling */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center; /* Center align the text */
+      padding: 20px; /* Add padding for spacing */
     }
   
-    .cta-button {
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
+    .hero-section img {
+      width: 100%; /* Full width for the image */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 20px; /* Add space below the image */
+    }
+  
+    .hero-section h1 {
+      font-size: 1.8rem; /* Reduce font size for the heading */
+    }
+  
+    .hero-section p {
+      font-size: 1rem; /* Reduce font size for paragraph */
+    }
+  
+    .hero-section .cta-button {
+      font-size: 1rem; /* Adjust button font size */
+      padding: 10px 20px; /* Adjust padding */
+      margin-top: 15px; /* Add margin for spacing */
+    }
+  
+    /* Products Grid */
+    .product-grid {
+      display: flex; /* Use flexbox for a simple mobile layout */
+      flex-wrap: wrap; /* Wrap products to the next line */
+      gap: 15px; /* Add spacing between items */
+      justify-content: center; /* Center the grid items */
+    }
+  
+    .product {
+      width: calc(100% - 30px); /* Full width with some padding */
+      max-width: 300px; /* Ensure a maximum size */
+      margin: 0 auto; /* Center items */
+    }
+  
+    .product .product-image img {
+      width: 100%; /* Make images responsive */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .product-overlay {
+      font-size: 0.9rem; /* Adjust overlay text size */
+    }
+  
+    /* View More Button */
+    .view-more-button {
+      width: 90%; /* Full-width button with padding */
+      max-width: 400px; /* Ensure a maximum size */
+      font-size: 1rem; /* Adjust font size */
+      padding: 10px; /* Adjust padding */
+      margin: 20px auto; /* Center button */
     }
 
-    .full-width-section {
-        padding: 4rem 1rem;
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
       }
-    
-      .full-width-section h2 {
-        font-size: 2rem;
-      }
-    
-      .full-width-section p {
-        font-size: 1rem;
-      }
+  
+      .full-width-section {
+          padding: 4rem 1rem;
+        }
+      
+        .full-width-section h2 {
+          font-size: 2rem;
+        }
+      
+        .full-width-section p {
+          font-size: 1rem;
+        }
+  }
+  
+  /* Smaller Mobile Screens (max-width: 480px) */
+  @media (max-width: 480px) {
+    /* Further reduce font sizes */
+    .hero-section h1 {
+      font-size: 1.5rem;
+    }
+  
+    .hero-section p {
+      font-size: 0.9rem;
+    }
+  
+    .hero-section .cta-button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  
+    /* Adjust Product Overlay */
+    .product-overlay {
+      font-size: 0.8rem;
+    }
+
+    .nav-links li a {
+        font-size: 0.8rem;
+    }
   }
 
   /* General Full-Width Section Styles */
