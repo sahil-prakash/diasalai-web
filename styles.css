@@ -12,8 +12,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #f8f8f8;
-    position: sticky;
+    /* background-color: #f8f8f8; */
+    /* position: sticky; */
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -30,9 +30,9 @@ body {
     gap: 1rem;
   }
   
-  .nav-links a {
+  .nav-links li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: 500;
   }
   
@@ -40,11 +40,11 @@ body {
   .hero {
     text-align: center;
     padding: 4rem 2rem;
-    background: #f4f4f4;
-    background-image: url("https://static.wixstatic.com/media/11062b_2255292002d4464b989b8ef141a9ba0a~mv2.jpg/v1/fill/w_3584,h_1804,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_2255292002d4464b989b8ef141a9ba0a~mv2.jpg");
+    /* background: #f4f4f4; */
+    /* background-image: url("https://static.wixstatic.com/media/11062b_2255292002d4464b989b8ef141a9ba0a~mv2.jpg/v1/fill/w_3584,h_1804,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_2255292002d4464b989b8ef141a9ba0a~mv2.jpg"); */
     background-size: cover;
     background-position: center;
-    color: #fff;
+    /* color: #fff; */
   }
   
   .hero h1 {
@@ -72,7 +72,7 @@ body {
   }
   
   /* Footer Section */
-.footer {
+/* .footer {
     background-color: #8f7171;
     color: #fff;
     padding: 2rem 1rem;
@@ -97,8 +97,77 @@ body {
   .footer .social-media {
     display: flex;
     justify-content: center;
-    align-items: center; /* Ensures vertical alignment */
-    gap: 1rem; /* Adds spacing between icons */
+    align-items: center;
+    gap: 1rem; 
+  }
+  
+  .footer .social-link img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .footer .social-link img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  } */
+
+  /* Footer Styling */
+.footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 40px 20px; /* Spacing inside footer */
+    display: flex;
+    justify-content: space-between; /* Space between columns */
+    flex-wrap: wrap; /* Ensure columns wrap on smaller screens */
+    gap: 20px; /* Spacing between columns */
+  }
+  
+  /* Footer Columns */
+  .footer-column {
+    flex: 1; /* Distribute space evenly */
+    min-width: 200px; /* Ensure columns have a minimum width */
+  }
+  
+  .footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Optional: Accent color for headings */
+  }
+  
+  .footer-column p,
+  .footer-column ul {
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li a {
+    color: #fff; /* Links inherit white color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ffcc00; /* Optional: Accent color on hover */
+    cursor: pointer;
+  }
+
+  .footer .social-media h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; 
   }
   
   .footer .social-link img {
@@ -127,7 +196,7 @@ body {
   
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     justify-content: center;
   }
@@ -153,6 +222,51 @@ body {
   
   .product p {
     color: #555;
+  }
+  
+  .product-image {
+    position: relative;
+    overflow: hidden; /* Ensure no overflow beyond container */
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom on hover */
+  }
+  
+  /* Overlay Styling */
+  .product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center text vertically and horizontally */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    color: #fff; /* White text for visibility */
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding doesn't exceed container bounds */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Hover Effects */
+  .product-image:hover img {
+    transform: scale(1.1); /* Slight zoom effect on image */
+  }
+  
+  .product-image:hover .product-overlay {
+    opacity: 1; /* Make overlay visible on hover */
+  }
+
+  .product-overlay p {
+    color: #fff;
   }
   
   /* Animations */
@@ -230,13 +344,13 @@ body {
 
   /* General Full-Width Section Styles */
 .full-width-section {
-    width: 100%;
+    /* width: 100%; */
     padding: 6rem 2rem;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
+    color: #fff;
     position: relative;
   }
   
@@ -253,6 +367,14 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2rem;
   }
+
+  .ourstory p {
+    color: #555;
+  }
+
+  .ourstory h2 {
+    color: #555;
+  }
   
   /* Background Variations */
   .bg-dark {
@@ -266,6 +388,13 @@ body {
   }
   
   .bg-image {
+    /* background-image: url("https://static.wixstatic.com/media/e0216c_65af25aef53a404e86fa53d63c8bf584~mv2.jpg/v1/fill/w_3000,h_1138,fp_0.50_0.50,q_90,enc_avif,quality_auto/e0216c_65af25aef53a404e86fa53d63c8bf584~mv2.jpg"); */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+
+  .mainpage {
     background-image: url("https://static.wixstatic.com/media/e0216c_65af25aef53a404e86fa53d63c8bf584~mv2.jpg/v1/fill/w_3000,h_1138,fp_0.50_0.50,q_90,enc_avif,quality_auto/e0216c_65af25aef53a404e86fa53d63c8bf584~mv2.jpg");
     background-size: cover;
     background-position: center;
@@ -339,3 +468,206 @@ body {
   .close-btn:hover {
     color: #000;
   }
+
+  /* Container for all sections */
+.container {
+    scroll-snap-type: y mandatory; /* Enables vertical snap scrolling */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    height: 100vh; /* Ensures full viewport height */
+  }
+  
+/* Scrolling Section */
+.image-scroller {
+    width: 100%;
+    overflow: hidden; /* Prevents content overflow */
+    position: relative;
+    background-color: #f4f4f4; /* Optional background */
+    padding: 20px 0;
+  }
+  
+  .scrolling-image-container {
+    display: flex;
+    gap: 20px; /* Adds spacing between images */
+   animation: scroll-left 20s linear infinite; /* Auto-scroll effect */
+  }
+  
+  .scrolling-image-container img {
+    width: 300px; /* Set fixed width */
+    height: 300px; /* Set fixed height */
+    object-fit: cover; /* Ensures images maintain aspect ratio */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    will-change: transform;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0); /* Start at the initial position */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll to the left */
+    }
+  }
+
+  .experiences {
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .experiences h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .experiences {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .experiences img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  
+  .experiences h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .experiences p {
+    color: #555;
+  }
+
+  /* Popup Overlay */
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Popup Content */
+  .popup-content {
+    background-color: #fff;
+    color: #333;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .popup-body {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Team List */
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .team-member {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .team-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .team-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .team-details p {
+    margin: 5px 0 0;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  /* Tooltip Container */
+.tooltip-item {
+    position: relative; /* Position relative to contain the tooltip */
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    display: inline-block;
+    color: #000; /* Ensure visible text */
+  }
+  
+  /* Tooltip Styling */
+.tooltip-item::after {
+    content: attr(data-tooltip); /* Use the `data-tooltip` attribute for text */
+    position: absolute;
+    bottom: 110%; /* Position the tooltip above the item */
+    left: 0; /* Align the tooltip's left edge with the item's left edge */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: #fff; /* White text */
+    padding: 5px 10px; /* Add padding for better readability */
+    border-radius: 5px; /* Rounded corners */
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 0.9rem; /* Slightly smaller text */
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+    pointer-events: none; /* Prevent tooltip from blocking hover events */
+  }
+  
+  /* Tooltip Arrow */
+  .tooltip-item::before {
+    content: '';
+    position: absolute;
+    bottom: 100%; /* Place the arrow just below the tooltip */
+    left: 10px; /* Slightly offset the arrow to align with the tooltip */
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Tooltip Hover Effect */
+  .tooltip-item:hover::after,
+  .tooltip-item:hover::before {
+    opacity: 1; /* Show tooltip */
+    visibility: visible; /* Make tooltip visible */
+  }
+  
