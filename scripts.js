@@ -87,3 +87,14 @@ let scrollPosition = 0; // Initial scroll position
       teamPopup.style.display = 'none';
     }
   });
+
+  document.getElementById('viewMoreBtn').addEventListener('click', function () {
+    // Show the hidden products
+    const hiddenProducts = document.querySelectorAll('.hidden-products');
+    for(var i=0; i<hiddenProducts.length; i++) {
+      hiddenProducts[i].style.display = 'block'
+    }
+    
+    // Remove the "View More" button
+    this.style.display = 'none';
+  });
